@@ -1,0 +1,98 @@
+header {
+    background-color: red;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-top: 40px;
+    background-color: yellow;
+}
+
+.container_sub {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    background-color: yellow;
+}
+
+.logo {
+    font-size: 30px;
+    margin-bottom: 40px;
+    background-color: green;
+}
+
+.header_menu {
+    font-size: 30px;
+    display: flex;
+    margin-top: 40px;
+    margin-left: auto;    
+    background-color: blue;
+}
+
+.flex {
+    display: flex;
+}
+
+.aside_menu {
+    margin-left: auto;
+    font-size: 40px;
+    background-color: brown;
+}
+
+section {
+    margin-bottom: 1200px;
+    background-color: pink;
+}
+
+
+.article_inner {
+    font-family: "Dancing Script", cursive;
+    font-size: 80px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+main {
+    font-size: 40px;
+}
+
+footer {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    background-color: orange;   
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    .header_menu {
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        background-color: blue;
+        align-items: center;
+        margin-left: 0;
+    }
+    .container_sub.flex {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    main {
+        order: 1;
+    }
+
+    .aside_menu {
+        order: 2;
+        margin-left: 0;
+    }
+
+    footer {
+        order: 3;
+    }    
+}
