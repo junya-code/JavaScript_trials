@@ -51,6 +51,16 @@
                                 }
                             });
                             </script>
+                        <p id="fadeText">これはフェードインするテキストです</p>
+                            <script>
+                            const fadeText = document.getElementById("fadeText");
+                            fadeText.style.opacity = 0;
+                            fadeText.style.transition = "opacity 15s";
+
+                            window.addEventListener("load", () => {
+                            fadeText.style.opacity = 1;
+                            });
+                            </script>
                     </h2>
 
 

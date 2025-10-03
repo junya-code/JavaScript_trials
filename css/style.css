@@ -46,6 +46,9 @@ section {
     background-color: pink;
 }
 
+#myText {
+    margin-bottom: 40px;
+}
 
 .article_inner {
     font-family: "Dancing Script", cursive;
