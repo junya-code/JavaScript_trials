@@ -46,7 +46,7 @@ section {
     background-color: pink;
 }
 
-#myText {
+#myButton {
     margin-bottom: 40px;
 }
 
@@ -54,7 +54,6 @@ section {
     font-family: "Dancing Script", cursive;
     font-size: 80px;
     margin-top: 40px;
-    margin-left: 40px;
 }
 
 main {

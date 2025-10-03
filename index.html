@@ -36,22 +36,9 @@
             <article>
                 <section id="link1">
                     <h2>
-                        <button id="myButton">押してみて！</button>
-                            <p id="myText">こんにちは！</p>
-
-                            <script>
-                            const button = document.getElementById("myButton");
-                            const text = document.getElementById("myText");
-
-                            button.addEventListener("click", function () {
-                                if (text.textContent === "こんにちは！") {
-                                text.textContent = "ありがとう！";
-                                } else {
-                                text.textContent = "こんにちは！";
-                                }
-                            });
-                            </script>
-                        <p id="fadeText">これはフェードインするテキストです</p>
+                        <button id="myButton">押すと"ありがとう"と"こんにちは"が切り替わって表示</button>                            
+                        <p id="fadeText">ここに</p>
+                        
                             <script>
                             const fadeText = document.getElementById("fadeText");
                             fadeText.style.opacity = 0;
@@ -59,6 +46,19 @@
 
                             window.addEventListener("load", () => {
                             fadeText.style.opacity = 1;
+                            });
+                            </script>
+
+                            <script>
+                            const button = document.getElementById("myButton");
+                            const text = document.getElementById("fadeText");
+
+                            button.addEventListener("click", function () {
+                                if (text.textContent === "こんにちは") {
+                                text.textContent = "ありがとう";
+                                } else {
+                                text.textContent = "こんにちは";
+                                }
                             });
                             </script>
                     </h2>
