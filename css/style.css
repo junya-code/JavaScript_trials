@@ -17,18 +17,33 @@ header {
     background-color: yellow;
 }
 
-.logo {
-    font-size: 30px;
+.margin_bottom {
     margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 40px;
+    font-family: "Dancing Script", cursive;
+    margin-bottom: 45px;
     background-color: green;
 }
 
 .header_menu {
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
-    margin-top: 40px;
-    margin-left: auto;    
+    justify-content: space-between;
+    margin-left: auto; 
+    margin-bottom: 45px;   
     background-color: blue;
+    padding: 0 40px;
+}
+
+.header_menu a {
+    flex: 1;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
 }
 
 .flex {
@@ -48,6 +63,10 @@ section {
 
 #myButton {
     margin-bottom: 40px;
+}
+
+#fadeText {
+    margin-bottom: 120px;
 }
 
 .article_inner {

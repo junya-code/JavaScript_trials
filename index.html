@@ -22,11 +22,42 @@
 
     <header>
         <div class="container flex">
-            <a href="" class="logo">ヘッダー</a> 
+            <a href=""></a> 
+            <p id="clock" class="logo"></p>
+
+                <script>
+                    function updateClock() {
+                        const now = new Date();
+
+                        // 時刻（例：11:42:07）
+                        const time = now.toLocaleTimeString();
+
+                        // 日付（例：2025年10月4日）
+                        const date = now.toLocaleDateString('ja-JP', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        // 曜日（例：土曜日）
+                        const weekday = now.toLocaleDateString('ja-JP', {
+                            weekday: 'long'
+                        });
+
+                        // 表示をまとめる
+                        const clock = document.getElementById("clock");
+                        clock.textContent = `${date}（${weekday}） ${time}`;
+                    }
+
+                    // 初回表示＋1秒ごとに更新
+                    updateClock();
+                    setInterval(updateClock, 1000);
+                </script>
+
             <nav class="header_menu">
-                <a href="#link1">リンク1</a>
-                <a href="#link2">リンク2</a>
-                <a href="#link3">リンク3</a>                
+                <a href="#link1">Link1</a>
+                <a href="#link2">Link2</a>
+                <a href="#link3">Link3</a>                
             </nav>
         </div>
     </header>
@@ -36,33 +67,54 @@
             <article>
                 <section id="link1">
                     <h2>
-                        <button id="myButton">押すと"ありがとう"と"こんにちは"が切り替わって表示</button>                            
+                        <button id="myButton">押すと”ここに”の文字が切り替わります</button>
                         <p id="fadeText">ここに</p>
-                        
-                            <script>
-                            const fadeText = document.getElementById("fadeText");
-                            fadeText.style.opacity = 0;
-                            fadeText.style.transition = "opacity 15s";
 
-                            window.addEventListener("load", () => {
-                            fadeText.style.opacity = 1;
-                            });
+                            <script>
+                                const fadeText = document.getElementById("fadeText");
+                                fadeText.style.opacity = 0;
+                                fadeText.style.transition = "opacity 15s";
+
+                                window.addEventListener("load", () => {
+                                    fadeText.style.opacity = 1;
+                                });
                             </script>
 
                             <script>
-                            const button = document.getElementById("myButton");
-                            const text = document.getElementById("fadeText");
+                                const button = document.getElementById("myButton");
+                                const text = document.getElementById("fadeText");
 
-                            button.addEventListener("click", function () {
-                                if (text.textContent === "こんにちは") {
-                                text.textContent = "ありがとう";
-                                } else {
-                                text.textContent = "こんにちは";
-                                }
-                            });
+                                button.addEventListener("click", () => {
+                                    if (text.textContent === "こんにちは") {
+                                        text.textContent = "ありがとう";
+                                    } else {
+                                        text.textContent = "こんにちは";
+                                    }
+                                });
                             </script>
+
+                        <textarea id="diaryInput" placeholder="文字を入力して" style="display: block;"></textarea>
+                        <button onclick="toggleDiary()" class = "margin_bottom">ここを押すと下に表示されます</button>
+
+                        <div id="diaryContent" class="hidden">
+                            <p id="diaryText"></p>
+                        </div>
+
+                        <script>
+                            const diary = document.getElementById("diaryContent");
+                            const diaryText = document.getElementById("diaryText");
+                            const diaryInput = document.getElementById("diaryInput");
+
+                            function toggleDiary() {
+                                const input = diaryInput.value.trim();
+                                diaryText.innerHTML = input.replace(/\n/g, "<br>");
+                                diary.classList.remove("hidden");
+                            }
+                        </script>
+
+
+
                     </h2>
-
 
                     <p class="article_inner">
                         aaaaaaa
